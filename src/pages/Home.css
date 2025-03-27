@@ -1,0 +1,781 @@
+/* General Styles */
+
+/* Main container */
+.home-container {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+.logo-image {
+  height: 50px; 
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.125rem; /* Slightly larger font size */
+  font-weight: 300;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition for hover effect */
+  position: relative; /* Required for underline animation */
+}
+
+.nav-link:hover {
+  color: #ddd;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Underline animation */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem; /* Distance from the text */
+  width: 0;
+  height: 0.125rem; /* Underline thickness */
+  background-color: #fff; /* Underline color */
+  transition: width 0.3s ease; /* Underline transition */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+/* Additional Section */
+.another-section {
+  background-color: #f9f9f9;
+  /* Light gray background */
+  color: #333;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.another-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.another-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+/* Hero Section Styles */
+
+.main-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  z-index: 1;
+}
+
+/* Hero Section */
+.hero-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #eee;
+  max-width: 700px;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+}
+
+/* Button Styles */
+.button-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button.primary {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.button.primary:hover {
+  background-color: #e0a800;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+.button.secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1rem;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  z-index: 3;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+      transform: translateY(0) translateX(-50%);
+  }
+
+  40% {
+      transform: translateY(-10px) translateX(-50%);
+  }
+
+  60% {
+      transform: translateY(-5px) translateX(-50%);
+  }
+}
+
+
+
+
+/* General Styles (Keep these) */
+/* Hero Section Styles (Keep these) */
+/* Sports Logos Section Styles (Keep these) */
+/* Additional Section (Keep this) */
+
+/* Feature Technologies Section Styles (Updated) */
+/* Section Styling */
+.our-technologies {
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  text-align: center;
+  border-radius: 35px;
+}
+
+.our-technologies h2 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+  font-family: "Oswald", serif;
+  font-weight: 600;
+  color: #000000;
+}
+
+.our-technologies p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  color: #777;
+  font-size: 1rem;
+}
+
+/* Container for Technology Cards */
+.technologies-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 3rem 0;
+}
+
+/* Card Base Styles */
+.technology-card {
+  background-color: #F7F7F7;
+  border-radius: 1rem;
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  width: 340px;  /* Increased width */
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.technology-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
+}
+
+.tech-card-inner {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Title Styling */
+.technology-card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 0.8rem;
+  color: #000; /* Black title */
+  font-family: "Oswald", serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  text-align: left;
+}
+
+/* Description Styling */
+.technology-card p {
+  font-size: 0.9rem; /* Smaller size */
+  line-height: 1.4;
+  color: #666; /* Lighter text */
+  text-align: left;
+  max-height: 3rem; /* Shorter text */
+  text-overflow: ellipsis;
+}
+
+/* Image Styling */
+.technology-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+.technology-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Positioning for Animation */
+.tech-card-left {
+  transform: translateX(-5%);
+}
+
+.tech-card-right {
+  transform: translateX(5%);
+}
+
+.tech-card-center {
+  z-index: 10;
+  transform: translateY(-1.5rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+}
+
+/* Animations */
+.tech-card-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.tech-card-right {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.tech-card-center {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.tech-card-left.show,
+.tech-card-right.show,
+.tech-card-center.show {
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .technologies-container {
+    gap: 2rem;
+  }
+
+  .technology-card {
+    width: 90%;
+    max-width: 420px;
+  }
+
+  .tech-card-left,
+  .tech-card-right,
+  .tech-card-center {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .technologies-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+/* Sports Logos Section Styles */
+
+.sports-logos-section {
+  background-color: #ffffff;
+  color: #343a40;
+  /* Dark gray text */
+  padding: 3rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.sports-logos-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #212529;
+  /* Darker gray for the title */
+  font-family: "Rowdies", serif;
+  font-weight: 700;
+}
+
+.logos-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.sport-logo {
+  height: 70px;
+  margin: 0.5rem 1rem;
+  transition: transform 0.3s ease;
+}
+
+.sport-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sport-logo {
+      height: 50px;
+      margin: 0.5rem;
+  }
+
+  .sports-logos-section h2 {
+      font-size: 1.8rem;
+  }
+
+  .sports-logos-section p {
+      font-size: 1rem;
+  }
+}
+
+
+.section-separator, .sponsor-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #ffffff;
+}
+
+.section-separator img, .sponsor-separator img {
+  width: 80%; 
+  max-width: 600px;
+  height: auto;
+}
+
+.use-cases-section {
+  background-color: #f9f9f9; /* Light gray background */
+  color: #333;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.use-cases-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.use-cases-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.use-cases-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.use-cases-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #000;
+  font-family: 'Gantari', serif;
+}
+
+.use-cases-section p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.3;
+  color: #555;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  /* Increased width */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Slider */
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Slide */
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 1rem;
+  min-height: 400px;
+}
+
+.slide img {
+  width: 50%; /* Increased image width */
+  max-width: 500px;
+  /* Increased max width */
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-right: 2rem;
+  /* Spacing between image and text */
+}
+
+.slide-content {
+  text-align: left;
+}
+
+.slide h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  padding-top: 1rem;
+  font-family: "Oswald", serif;
+  font-weight: 600;
+}
+
+.slide p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #666;
+  max-height: 50px; /* Reduced height */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Logos Inside Slide */
+.slide-logos {
+  display: flex;
+  gap: 0.3rem; 
+  margin-top: auto;
+  margin-left: 25%;
+  align-items: center; 
+}
+
+/* Make the logos very small */
+.slide-logo {
+  width: 25% !important;  
+  height: 25% !important; 
+  object-fit: contain;
+}
+
+
+/* Slider buttons */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px; /* Circular size */
+  height: 35px; /* Circular size */
+  border-radius: 50%;
+  background-color: #ddd; /* Light gray background */
+  color: #504f4f; /* Black icon */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  padding: 0; /* Reset padding inside the button */
+}
+
+/* Previous button (left side) */
+.slider-button.prev {
+  left: 1rem; /* Padding from left */
+}
+
+/* Next button (right side) */
+.slider-button.next {
+  right: 1rem; /* Padding from right */
+}
+
+/* Hover effect */
+.slider-button:hover {
+  background-color: #ccc; /* Darker gray on hover */
+  transform: translateY(-50%) scale(1.1); /* Slightly enlarge */
+}
+
+
+/* Slider dots */
+.slider-dots {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 1.2rem;
+  /* Increased size */
+  height: 1.2rem;
+  /* Increased size */
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #aaa;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .slide {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 500px;
+      /* Increased minimum height */
+  }
+
+  .slide img {
+      width: 80%;
+      max-width: none;
+      margin-bottom: 1rem;
+      margin-right: 0;
+  }
+
+  .slider-container {
+      padding: 0;
+  }
+
+  .slider-button {
+      font-size: 1rem;
+      padding: 0.5rem;
+  }
+
+  .dot {
+      width: 0.7rem;
+      height: 0.7rem;
+  }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.testimonials-section p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Testimonials Container */
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.75rem 1.75rem rgba(0, 0, 0, 0.2);
+}
+
+/* Highlighted Center Card */
+.testimonial-card.highlight {
+  background: linear-gradient(135deg, #ffffff, #e2e2e2);
+  color: #000000;
+  transform: scale(1.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+/* Quote Text */
+.testimonial-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Client Image */
+.testimonial-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #ddd;
+}
+
+/* Name & Company */
+.testimonial-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-company {
+  font-size: 1rem;
+  color: #565656;
+  margin-bottom: 1rem;
+}
+
+/* Star Ratings */
+.testimonial-rating {
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonials-container {
+      flex-direction: column;
+  }
+
+  .testimonial-card.highlight {
+      transform: scale(1);
+  }
+}

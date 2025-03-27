@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --cricket-green: #0e8a47;
+  --cricket-light-green: #24a95a;
+  --cricket-dark-green: #095a2e;
+  --cricket-ball: #e63946;
+  --cricket-ball-shadow: #c1121f;
+  --cricket-accent: #1e88e5;
+  --cricket-white: #ffffff;
+  --cricket-pitch: #e6d69e;
+  --cricket-field: #8cc152;
+  --cricket-grass-dark: #7bb043;
+  --form-bg: rgba(255, 255, 255, 0.95);
+  --text-dark: #2d3748;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8fafc;
+  color: var(--text-dark);
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e6f9f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+.cricket-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, var(--cricket-field) 0%, var(--cricket-dark-green) 100%);
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  /* Field pattern */
+  .field-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--cricket-grass-dark),
+      var(--cricket-grass-dark) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+    opacity: 0.2;
+  }
+  
+  .pitch-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cricket-pitch);
+    height: 100%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+  
+  .pitch-line-1 {
+    width: 260px;
+  }
+  
+  .pitch-line-2 {
+    width: 220px;
+    opacity: 0.9;
+  }
+  
+  .pitch-line-3 {
+    width: 180px;
+    opacity: 0.8;
+  }
+  
+  /* Pitch markings */
+  .pitch-marking {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 4px;
+    background-color: white;
+    opacity: 0.6;
+  }
+  
+  .pitch-marking-1 {
+    top: 25%;
+  }
+  
+  .pitch-marking-2 {
+    top: 50%;
+  }
+  
+  .pitch-marking-3 {
+    top: 75%;
+  }
+  
+  .stumps {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100px;
+    height: 150px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  }
+  
+  .stump {
+    width: 10px;
+    height: 100px;
+    background: linear-gradient(to right, #d1d1d1, #ffffff, #d1d1d1);
+    margin: 0 6px;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .bails {
+    position: absolute;
+    top: 0;
+    width: 70px;
+    height: 6px;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+/* Registration form container */
+.register-form-container {
+  background-color: var(--cricket-white);
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+  margin-top: 2vh;
+}
+
+/* Cricket ball animation */
+.cricket-ball-container {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cricket-ball {
+  width: 60px;
+  height: 60px;
+  background-color: var(--cricket-ball);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: ballSpin 4s infinite linear;
+}
+
+.seam {
+  position: absolute;
+  background-color: white;
+  width: 2px;
+  height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.seam-1 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.seam-2 {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.ball-trail {
+  position: absolute;
+  top: 50%;
+  left: -100px;
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(to right, transparent, var(--cricket-ball));
+  animation: ballTrail 4s infinite linear;
+}
+
+@keyframes ballSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ballTrail {
+  0% { transform: translateX(0) scaleX(0); opacity: 0; }
+  20% { transform: translateX(50px) scaleX(1); opacity: 1; }
+  100% { transform: translateX(200px) scaleX(0); opacity: 0; }
+}
+
+/* Form styling */
+h1 {
+  color: var(--cricket-green);
+  text-align: center;
+  margin-bottom: 6px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.register-subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #4a5568;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input {
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--cricket-accent);
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
+}
+
+.register-button {
+  background-color: var(--cricket-green);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--cricket-ball);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: var(--cricket-light-green);
+}
+
+.register-button:hover::before {
+  animation: ballMove 0.8s ease-in-out;
+}
+
+@keyframes ballMove {
+  0% { left: -20px; opacity: 1; }
+  100% { left: calc(100% + 20px); opacity: 1; }
+}
+
+.register-button:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Social login buttons */
+.social-login {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-login p {
+  color: #718096;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  color: #4a5568;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-button:hover {
+  background-color: #f7fafc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.social-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-button.google:hover {
+  color: #DB4437;
+  border-color: #DB4437;
+}
+
+.social-button.facebook:hover {
+  color: #4267B2;
+  border-color: #4267B2;
+}
+
+/* Error message styling */
+.error-message {
+  background-color: #fed7d7;
+  color: #c53030;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-left: 4px solid #c53030;
+}
+
+/* Login link */
+.login-link {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #718096;
+}
+
+.login-link a {
+  color: var(--cricket-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #2c5282;
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+  .register-form-container {
+    padding: 30px 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .register-subtitle {
+    font-size: 14px;
+  }
+  
+  .social-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .cricket-field {
+    height: 30vh;
+  }
+  
+  .stumps {
+    height: 80px;
+  }
+  
+  .stump {
+    height: 60px;
+    width: 6px;
+  }
+  
+  .bails {
+    top: 20px;
+    width: 40px;
+  }
+}
+
+/* Animation for form appearance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-form-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Focus visible outline for accessibility */
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cricket-accent);
+  outline-offset: 2px;
+}
+
+/* Button active state */
+.register-button:active {
+  transform: scale(0.98);
+}
+
+/* Placeholder styling */
+input::placeholder {
+  color: #a0aec0;
+}
+
+/* Loading button animation */
+.register-button.loading {
+  background-color: var(--cricket-light-green);
+  cursor: wait;
+}
+
+/* Field validation styles */
+input:valid {
+  border-color: #e2e8f0;
+}
+
+input:not(:placeholder-shown):invalid {
+  border-color: #fc8181;
+}
+
+/* Additional cricket field elements */
+.field-boundary {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-color: var(--cricket-white);
+  border-radius: 50% 50% 0 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add shine to the cricket ball */
+.cricket-ball::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), transparent 50%);
+  border-radius: 50%;
+}
